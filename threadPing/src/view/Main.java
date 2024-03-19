@@ -20,7 +20,7 @@ public class Main {
 	        terraThread.start();
 	        googleThread.start();
 
-	        // Aguardar até que todas as threads terminem
+	        //threads aguardando ate o fim da execucao
 	        try {
 	            uolThread.join();
 	            terraThread.join();
