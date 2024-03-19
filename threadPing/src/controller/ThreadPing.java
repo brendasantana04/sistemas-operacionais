@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class ThreadPing extends Thread {
     private String servidor;
     private String process;
-    private long tempoTotal;
+    private double tempoTotal;
 
     public ThreadPing(String servidor) {
         this.servidor = servidor;
@@ -31,7 +31,7 @@ public class ThreadPing extends Thread {
                     int inicio = linha.indexOf("time=") + 5;
                     int fim = linha.indexOf(" ms");
                     String tempoStr = linha.substring(inicio, fim);
-                    long tempo = Long.parseLong(tempoStr);
+                    double tempo = Double.parseDouble(tempoStr);
                     //somando o valor de tempo a variavel
                     tempoTotal += tempo;
                 }
@@ -43,7 +43,7 @@ public class ThreadPing extends Thread {
         }
     }
 
-    public long getTempoTotal() {
+    public double getTempoTotal() {
     	//enviando variavel pra classe principal
         return tempoTotal;
     }

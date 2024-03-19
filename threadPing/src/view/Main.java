@@ -5,7 +5,7 @@ public class Main {
 	 public static void main(String[] args) {
 	        // verificando se e linux
 	        String osName = System.getProperty("os.name");
-	        if (!osName.contains("linux")) {
+	        if (!osName.contains("nux")) {
 	            System.out.println("Precisa ser um sistema operacional LINUX!!!");
 	            return;
 	        }
@@ -20,19 +20,19 @@ public class Main {
 	        terraThread.start();
 	        googleThread.start();
 
-//	        // Aguardar até que todas as threads terminem
-//	        try {
-//	            uolThread.join();
-//	            terraThread.join();
-//	            googleThread.join();
-//	        } catch (InterruptedException e) {
-//	            e.printStackTrace();
-//	        }
+	        // Aguardar até que todas as threads terminem
+	        try {
+	            uolThread.join();
+	            terraThread.join();
+	            googleThread.join();
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
 
 	        //calculando tempo medio utilizando get
-	        long tempoUOL = uolThread.getTempoTotal() / 10;
-	        long tempoTerra = terraThread.getTempoTotal() / 10;
-	        long tempoGoogle = googleThread.getTempoTotal() / 10;
+	        double tempoUOL = uolThread.getTempoTotal() / 10;
+	        double tempoTerra = terraThread.getTempoTotal() / 10;
+	        double tempoGoogle = googleThread.getTempoTotal() / 10;
 
 	        //resposta
 	        System.out.println("tempo medio de ping para UOL: " + tempoUOL + " ms");
